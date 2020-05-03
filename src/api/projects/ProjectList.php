@@ -1,6 +1,6 @@
 <?php
 
-namespace SayaCloud\Projects\Resource;
+namespace SayaCloud\Api\Projects;
 
 use SayaCloud\Contract\RequestAbstract;
 use SayaCloud\Lib\RequestMethod;

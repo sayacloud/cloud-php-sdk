@@ -1,6 +1,6 @@
 <?php
 
-use SayaCloud\Api\Projects\ProjectDelete;
+use SayaCloud\Api\Developers\DeveloperDetail;
 use SayaCloud\SayaCloud;
 
 include '../../vendor/autoload.php';
@@ -9,10 +9,9 @@ include '../config.php';
 try {
     $client = SayaCloud::client($config);
 
-    $deleteProject = new ProjectDelete();
-    $deleteProject->setId(2);
+    $detail = new DeveloperDetail(['id'=>3]);
 
-    $result = $client->request($deleteProject);
+    $result = $client->request($detail);
     var_dump($result);
 
 } catch (Exception $e) {

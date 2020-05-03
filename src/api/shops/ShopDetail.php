@@ -1,15 +1,15 @@
 <?php
 
-namespace SayaCloud\Projects\Resource;
+namespace SayaCloud\Api\Shops;
 
 use SayaCloud\Contract\RequestAbstract;
 use SayaCloud\Lib\RequestMethod;
 
-class ProjectDelete extends RequestAbstract
+class ShopDetail extends RequestAbstract
 {
-    protected $apiUri = '/project/delete';
+    protected $apiUri = '/shop/detail';
 
-    protected $requestMethod = RequestMethod::POST;
+    protected $requestMethod = RequestMethod::GET;
 
     /**
      * @var int

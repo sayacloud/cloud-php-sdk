@@ -1,7 +1,7 @@
 <?php
 
-use SayaCloud\Projects\Resource\DeveloperList;
-use SayaCloud\Projects\Resource\ProjectList;
+use SayaCloud\Api\Categories\CategoryDetail;
+use SayaCloud\Api\Subcategories\SubcategoryDetail;
 use SayaCloud\SayaCloud;
 
 include '../../vendor/autoload.php';
@@ -10,10 +10,9 @@ include '../config.php';
 try {
     $client = SayaCloud::client($config);
 
-    $listDeveloper = new DeveloperList();
-    $listDeveloper->setLimit(2);
+    $detail = new SubcategoryDetail(['id' => 1]);
 
-    $result = $client->request($listDeveloper);
+    $result = $client->request($detail);
     var_dump($result);
 
 } catch (Exception $e) {

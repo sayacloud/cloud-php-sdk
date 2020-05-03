@@ -1,6 +1,7 @@
 <?php
 
-use SayaCloud\Api\Projects\ProjectDelete;
+use SayaCloud\Api\Categories\CategoryList;
+use SayaCloud\Api\Subcategories\SubcategoryList;
 use SayaCloud\SayaCloud;
 
 include '../../vendor/autoload.php';
@@ -9,10 +10,9 @@ include '../config.php';
 try {
     $client = SayaCloud::client($config);
 
-    $deleteProject = new ProjectDelete();
-    $deleteProject->setId(2);
+    $list = new SubcategoryList(['project_id' => 1, 'category_id' => 1]);
 
-    $result = $client->request($deleteProject);
+    $result = $client->request($list);
     var_dump($result);
 
 } catch (Exception $e) {

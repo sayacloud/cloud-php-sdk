@@ -1,7 +1,7 @@
 <?php
 
-use SayaCloud\Projects\Resource\ProjectDetail;
-use SayaCloud\Projects\Resource\ProjectUpdate;
+use SayaCloud\Api\Projects\ProjectDetail;
+use SayaCloud\Api\Projects\ProjectUpdate;
 use SayaCloud\SayaCloud;
 
 include '../../vendor/autoload.php';

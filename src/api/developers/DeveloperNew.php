@@ -1,20 +1,15 @@
 <?php
 
-namespace SayaCloud\Projects\Resource;
+namespace SayaCloud\Api\Developers;
 
 use SayaCloud\Contract\RequestAbstract;
 use SayaCloud\Lib\RequestMethod;
 
-class DeveloperUpdate extends RequestAbstract
+class DeveloperNew extends RequestAbstract
 {
-    protected $apiUri = '/developer/update';
+    protected $apiUri = '/developer/create';
 
     protected $requestMethod = RequestMethod::POST;
-
-    /**
-     * @var int
-     */
-    protected $id;
 
     /**
      * @var string
@@ -108,13 +103,5 @@ class DeveloperUpdate extends RequestAbstract
     public function setScope(string $scope)
     {
         $this->scope = $scope;
-    }
-
-    /**
-     * @param int $id
-     */
-    public function setId(int $id)
-    {
-        $this->id = $id;
     }
 }

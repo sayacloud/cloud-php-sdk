@@ -1,13 +1,13 @@
 <?php
 
-namespace SayaCloud\Projects\Resource;
+namespace SayaCloud\Api\Projects;
 
 use SayaCloud\Contract\RequestAbstract;
 use SayaCloud\Lib\RequestMethod;
 
-class DeveloperDetail extends RequestAbstract
+class ProjectDetail extends RequestAbstract
 {
-    protected $apiUri = '/developer/detail';
+    protected $apiUri = '/project/detail';
 
     protected $requestMethod = RequestMethod::GET;
 

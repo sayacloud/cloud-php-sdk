@@ -1,7 +1,6 @@
 <?php
 
-use SayaCloud\Projects\Resource\DeveloperUpdate;
-use SayaCloud\Projects\Resource\ProjectDelete;
+use SayaCloud\Api\Developers\DeveloperUpdate;
 use SayaCloud\SayaCloud;
 
 include '../../vendor/autoload.php';

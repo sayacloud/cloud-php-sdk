@@ -1,6 +1,7 @@
 <?php
 
-use SayaCloud\Api\Projects\ProjectDelete;
+use SayaCloud\Api\Shops\ShopList;
+use SayaCloud\Api\Shops\ShopNew;
 use SayaCloud\SayaCloud;
 
 include '../../vendor/autoload.php';
@@ -9,10 +10,9 @@ include '../config.php';
 try {
     $client = SayaCloud::client($config);
 
-    $deleteProject = new ProjectDelete();
-    $deleteProject->setId(2);
+    $shopList = new ShopList();
 
-    $result = $client->request($deleteProject);
+    $result = $client->request($shopList);
     var_dump($result);
 
 } catch (Exception $e) {

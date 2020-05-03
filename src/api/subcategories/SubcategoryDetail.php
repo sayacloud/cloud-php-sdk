@@ -1,15 +1,12 @@
 <?php
 
-namespace SayaCloud\Projects\Resource;
+namespace SayaCloud\Api\Subcategories;
 
 use SayaCloud\Contract\RequestAbstract;
-use SayaCloud\Lib\RequestMethod;
 
-class ProjectDetail extends RequestAbstract
+class SubcategoryDetail extends RequestAbstract
 {
-    protected $apiUri = '/project/detail';
-
-    protected $requestMethod = RequestMethod::GET;
+    protected $apiUri = '/subcategory/detail';
 
     /**
      * @var int

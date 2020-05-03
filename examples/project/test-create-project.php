@@ -1,6 +1,6 @@
 <?php
 
-use SayaCloud\Projects\Resource\ProjectNew;
+use SayaCloud\Api\Projects\ProjectNew;
 use SayaCloud\SayaCloud;
 
 include '../../vendor/autoload.php';

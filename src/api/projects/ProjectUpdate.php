@@ -1,15 +1,21 @@
 <?php
 
-namespace SayaCloud\Projects\Resource;
+namespace SayaCloud\Api\Projects;
 
 use SayaCloud\Contract\RequestAbstract;
 use SayaCloud\Lib\RequestMethod;
 
-class ProjectNew extends RequestAbstract
+class ProjectUpdate extends RequestAbstract
 {
-    protected $apiUri = '/project/create';
+    protected $apiUri = '/project/update';
 
     protected $requestMethod = RequestMethod::POST;
+
+    /**
+     * required
+     * @var int
+     */
+    protected $id;
 
     /**
      * @var string
@@ -22,7 +28,6 @@ class ProjectNew extends RequestAbstract
     protected $project_description;
 
     /**
-     * enum = normal,close,develop
      * @var string
      */
     protected $status;
@@ -49,6 +54,14 @@ class ProjectNew extends RequestAbstract
     public function setStatus(string $status)
     {
         $this->status = $status;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId(int $id)
+    {
+        $this->id = $id;
     }
 
 }

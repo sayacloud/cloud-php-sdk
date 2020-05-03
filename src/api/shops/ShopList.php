@@ -1,20 +1,14 @@
 <?php
 
-namespace SayaCloud\Projects\Resource;
+namespace SayaCloud\Api\Shops;
 
 use SayaCloud\Contract\RequestAbstract;
 use SayaCloud\Lib\RequestMethod;
 
-class DeveloperList extends RequestAbstract
+class ShopList extends RequestAbstract
 {
-    protected $apiUri = '/developer/list';
-
+    protected $apiUri = '/shop/list';
     protected $requestMethod = RequestMethod::GET;
-
-    /**
-     * @var string
-     */
-    protected $keyword;
 
     /**
      * @var int
@@ -22,10 +16,14 @@ class DeveloperList extends RequestAbstract
     protected $project_id;
 
     /**
-     * enum = 'normal','disabled'
      * @var string
      */
-    protected $status;
+    protected $keyword;
+
+    /**
+     * @var string
+     */
+    protected $type;
 
     /**
      * @var int
@@ -38,14 +36,6 @@ class DeveloperList extends RequestAbstract
     protected $limit = 15;
 
     /**
-     * @param string $keyword
-     */
-    public function setKeyword(string $keyword)
-    {
-        $this->keyword = $keyword;
-    }
-
-    /**
      * @param int $project_id
      */
     public function setProjectId(int $project_id)
@@ -54,11 +44,19 @@ class DeveloperList extends RequestAbstract
     }
 
     /**
-     * @param string $status
+     * @param string $keyword
      */
-    public function setStatus(string $status)
+    public function setKeyword(string $keyword)
     {
-        $this->status = $status;
+        $this->keyword = $keyword;
+    }
+
+    /**
+     * @param string $type
+     */
+    public function setType(string $type)
+    {
+        $this->type = $type;
     }
 
     /**
