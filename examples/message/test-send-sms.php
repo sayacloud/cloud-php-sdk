@@ -1,6 +1,6 @@
 <?php
 
-use SayaCloud\Messages\Exception\MessageException;
+use SayaCloud\Exception\MessageException;
 use SayaCloud\Messages\Messages;
 
 include '../../vendor/autoload.php';

@@ -25,8 +25,9 @@ interface MessagePackageInterface
      * Make data signature
      *
      * @param array $data
+     * @param string $appSecret
      * @return string signature
      */
-    public function makeSignature(array $data): string;
+    public function makeSignature(array $data,string $appSecret): string;
 
 }

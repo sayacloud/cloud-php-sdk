@@ -1,8 +1,8 @@
 <?php
 
-use SayaCloud\Messages\Exception\MessageException;
-use SayaCloud\Messages\Lib\ContentType;
-use SayaCloud\Messages\Lib\RequestMethod;
+use SayaCloud\Exception\MessageException;
+use SayaCloud\Lib\ContentType;
+use SayaCloud\Lib\RequestMethod;
 use SayaCloud\Messages\Messages;
 
 include '../../vendor/autoload.php';

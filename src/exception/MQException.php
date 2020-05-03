@@ -1,6 +1,6 @@
 <?php
 
-namespace SayaCloud\Messages\Exception;
+namespace SayaCloud\Exception;
 
 /**
  * Class MQException

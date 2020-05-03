@@ -1,6 +1,6 @@
 <?php
 
-namespace SayaCloud\Messages\Lib;
+namespace SayaCloud\Lib;
 
 /**
  * Class ContentType

@@ -2,10 +2,12 @@
 
 namespace SayaCloud\Messages;
 
+use SayaCloud\Exception\ApiException;
+use SayaCloud\Exception\MQException;
 use SayaCloud\Messages\Concern\AgentTrait;
 use SayaCloud\Messages\Contract\AbstractMessagePackage;
 use SayaCloud\Messages\Contract\MessageSendInterface;
-use SayaCloud\Messages\Exception\MessageException;
+use SayaCloud\Exception\MessageException;
 use SayaCloud\Messages\Resource\EmailPackage;
 use SayaCloud\Messages\Resource\MessageQuery;
 use SayaCloud\Messages\Resource\SmsPackage;
@@ -117,9 +119,9 @@ class MscAgent implements MessageSendInterface
     /**
      * @param AbstractMessagePackage $messagePackage
      * @return bool
-     * @throws Exception\ApiException
      * @throws MessageException
-     * @throws Exception\MQException
+     * @throws ApiException
+     * @throws MQException
      */
     final public function sendMessage(AbstractMessagePackage $messagePackage): bool
     {
@@ -157,7 +159,7 @@ class MscAgent implements MessageSendInterface
     /**
      * @param MessageQuery $query
      * @return array
-     * @throws Exception\ApiException
+     * @throws ApiException
      */
     final public function sendQuery(MessageQuery $query): array
     {

@@ -4,7 +4,7 @@ namespace SayaCloud\Messages;
 
 use SayaCloud\Messages\Contract\AbstractMessagePackage;
 use SayaCloud\Messages\Contract\MessageSendInterface;
-use SayaCloud\Messages\Exception\MQException;
+use SayaCloud\Exception\MQException;
 
 class AMQP
 {

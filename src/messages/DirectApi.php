@@ -4,7 +4,7 @@ namespace SayaCloud\Messages;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ConnectException;
-use SayaCloud\Messages\Exception\ApiException;
+use SayaCloud\Exception\ApiException;
 
 /**
  * Class DirectApi

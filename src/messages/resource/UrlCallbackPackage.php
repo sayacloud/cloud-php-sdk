@@ -3,7 +3,7 @@
 namespace SayaCloud\Messages\Resource;
 
 use SayaCloud\Messages\Contract\AbstractMessagePackage;
-use SayaCloud\Messages\Lib\ContentType;
+use SayaCloud\Lib\ContentType;
 
 /**
  * Class UrlCallbackPackage

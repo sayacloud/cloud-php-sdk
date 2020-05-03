@@ -1,10 +1,10 @@
 <?php
 
-namespace SayaCloud\Messages\Exception;
+namespace SayaCloud\Exception;
 
 /**
  * Class MessageException
- * @package SayaCloud\Messages\Exception
+ * @package SayaCloud\Exception
  */
 class MessageException extends \Exception
 {

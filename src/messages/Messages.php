@@ -3,7 +3,7 @@
 namespace SayaCloud\Messages;
 
 use SayaCloud\Messages\Contract\AbstractMessagePackage;
-use SayaCloud\Messages\Exception\MessageException;
+use SayaCloud\Exception\MessageException;
 use SayaCloud\Messages\Resource\EmailPackage;
 use SayaCloud\Messages\Resource\MessageQuery;
 use SayaCloud\Messages\Resource\SmsPackage;

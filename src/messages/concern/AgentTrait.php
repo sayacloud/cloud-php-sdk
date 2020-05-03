@@ -2,7 +2,7 @@
 
 namespace SayaCloud\Messages\Concern;
 
-use SayaCloud\Messages\Exception\MessageException;
+use SayaCloud\Exception\MessageException;
 
 /**
  * Trait AgentTrait
