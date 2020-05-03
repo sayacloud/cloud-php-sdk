@@ -16,5 +16,6 @@ $config = [
     'message_api_base' => 'http://127.0.0.1:18300/api/message',
 
     'project_api_base' => '',
-    'shop_api_base' => ''
+    'shop_api_base' => '',
+    'api_base'=>'http://127.0.0.1:18300'
 ];
