@@ -69,19 +69,25 @@ class ItemNew extends RequestAbstract
     /**
      * @var int
      */
-    protected $rank;
+    protected $rank = 100;
 
     /**
      * enum = 'listed','delisted'
      * @var string
      */
-    protected $status;
+    protected $status = 'delisted';
 
     /**
      * enum = 'express','pin_code','none'
      * @var string
      */
-    protected $ship_method;
+    protected $ship_method = 'express';
+
+    /**
+     * enum = 'money','points'
+     * @var string
+     */
+    protected $item_deal_type = 'money';
 
     /**
      * @param int $project_id
@@ -193,5 +199,13 @@ class ItemNew extends RequestAbstract
     public function setOriginPrice(string $origin_price)
     {
         $this->origin_price = $origin_price;
+    }
+
+    /**
+     * @param string $item_deal_type
+     */
+    public function setItemDealType(string $item_deal_type)
+    {
+        $this->item_deal_type = $item_deal_type;
     }
 }

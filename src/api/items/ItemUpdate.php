@@ -69,6 +69,12 @@ class ItemUpdate extends RequestAbstract
     protected $ship_method;
 
     /**
+     * enum = 'money', 'points'
+     * @var string
+     */
+    protected $item_deal_type;
+
+    /**
      * @param int $id
      */
     public function setId(int $id)
@@ -154,5 +160,13 @@ class ItemUpdate extends RequestAbstract
     public function setShipMethod(string $ship_method)
     {
         $this->ship_method = $ship_method;
+    }
+
+    /**
+     * @param string $item_deal_type
+     */
+    public function setItemDealType(string $item_deal_type)
+    {
+        $this->item_deal_type = $item_deal_type;
     }
 }
