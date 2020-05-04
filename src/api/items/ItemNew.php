@@ -59,7 +59,7 @@ class ItemNew extends RequestAbstract
     /**
      * @var string
      */
-    protected $cost_price;
+    protected $origin_price;
 
     /**
      * @var string
@@ -156,14 +156,6 @@ class ItemNew extends RequestAbstract
     }
 
     /**
-     * @param string $cost_price
-     */
-    public function setCostPrice(string $cost_price)
-    {
-        $this->cost_price = $cost_price;
-    }
-
-    /**
      * @param string $unit_price
      */
     public function setUnitPrice(string $unit_price)
@@ -193,5 +185,13 @@ class ItemNew extends RequestAbstract
     public function setShipMethod(string $ship_method)
     {
         $this->ship_method = $ship_method;
+    }
+
+    /**
+     * @param string $origin_price
+     */
+    public function setOriginPrice(string $origin_price)
+    {
+        $this->origin_price = $origin_price;
     }
 }

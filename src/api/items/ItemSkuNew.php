@@ -9,7 +9,7 @@ class ItemSkuNew extends RequestAbstract
 {
     protected $apiUri = '/item/sku/create';
 
-    protected $requestMethod=RequestMethod::POST;
+    protected $requestMethod = RequestMethod::POST;
 
     /**
      * @var int
@@ -25,6 +25,16 @@ class ItemSkuNew extends RequestAbstract
      * @var string
      */
     protected $sku_name;
+
+    /**
+     * @var float
+     */
+    protected $cost_price;
+
+    /**
+     * @var float
+     */
+    protected $unit_price;
 
     /**
      * @var int
@@ -79,5 +89,21 @@ class ItemSkuNew extends RequestAbstract
     public function setVirtualSold(int $virtual_sold)
     {
         $this->virtual_sold = $virtual_sold;
+    }
+
+    /**
+     * @param float $cost_price
+     */
+    public function setCostPrice(float $cost_price)
+    {
+        $this->cost_price = $cost_price;
+    }
+
+    /**
+     * @param float $unit_price
+     */
+    public function setUnitPrice(float $unit_price)
+    {
+        $this->unit_price = $unit_price;
     }
 }
