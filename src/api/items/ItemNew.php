@@ -5,7 +5,7 @@ namespace SayaCloud\Api\Items;
 use SayaCloud\Contract\RequestAbstract;
 use SayaCloud\Lib\RequestMethod;
 
-class ItemCreate extends RequestAbstract
+class ItemNew extends RequestAbstract
 {
     protected $requestMethod = RequestMethod::POST;
 
