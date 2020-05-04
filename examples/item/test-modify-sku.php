@@ -10,11 +10,11 @@ try {
     $client = SayaCloud::client($config);
 
     $sku_data = [
-        'id'=>1,
-        'item_id'=>1,
+        'id'=>3,
+        'item_id'=>2,
         'quantity'=>10,
         'cost_price'=>1.2,
-        'unit_price'=>1.09
+        'unit_price'=>1.89
     ];
 
     $sku = new ItemSkuModify($sku_data);

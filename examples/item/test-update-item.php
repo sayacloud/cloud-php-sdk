@@ -16,7 +16,8 @@ try {
         'name'=>'Items 1-aklds',
         'category_id'=>1,
         'subcategory_id'=>2,
-        'status'=>'delisted'
+        'status'=>'listed',
+        'item_deal_type'=>'points'
     ];
     $update = new ItemUpdate($item);
 

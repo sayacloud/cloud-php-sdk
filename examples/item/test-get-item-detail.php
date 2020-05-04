@@ -9,7 +9,7 @@ include '../config.php';
 try {
     $client = SayaCloud::client($config);
 
-    $detail = new ItemDetail(['id'=>1]);
+    $detail = new ItemDetail(['id'=>2]);
 
     $result = $client->request($detail);
     print_r($result);
