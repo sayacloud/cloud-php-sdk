@@ -1,22 +1,20 @@
 <?php
 
-use SayaCloud\Api\Orders\OrderCheckout;
+use SayaCloud\Api\CityList;
 use SayaCloud\SayaCloud;
 
 include '../../vendor/autoload.php';
 include '../config.php';
 
-// 购物车商品结算
 try {
     $client = SayaCloud::client($config);
 
-    $cart = [
-        'cart_ids' => '2,3',
-        'buyer_id' => 12,
+    $filter = [
+        'province_id'=>23
     ];
-    $new = new OrderCheckout($cart);
+    $list = new CityList($filter);
 
-    $result = $client->request($new);
+    $result = $client->request($list);
     var_dump($result);
 
 } catch (Exception $e) {

@@ -24,6 +24,12 @@ class ShopUpdate extends RequestAbstract
     protected $type;
 
     /**
+     * 管理员用户ID
+     * @var int
+     */
+    protected $admin_id;
+
+    /**
      * required
      * @var string
      */
@@ -221,6 +227,14 @@ class ShopUpdate extends RequestAbstract
     public function setId(int $id)
     {
         $this->id = $id;
+    }
+
+    /**
+     * @param int $admin_id
+     */
+    public function setAdminId(int $admin_id)
+    {
+        $this->admin_id = $admin_id;
     }
 
 

@@ -11,10 +11,11 @@ try {
     $client = SayaCloud::client($config);
 
     $shop = [
-        'id'=>1,
-        'project_id'=>1,
-        'shop_name'=>'中勘马孚1号店',
-        'address'=>'成都金牛区'
+        'id' => 1,
+        'project_id' => 1,
+        'admin_id' => 1020,
+        'shop_name' => '中勘马孚1号店',
+        'address' => '成都金牛区'
     ];
     $update = new ShopUpdate($shop);
 
