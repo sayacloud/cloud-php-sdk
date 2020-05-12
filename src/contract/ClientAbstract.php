@@ -6,6 +6,7 @@ use GuzzleHttp\Client;
 use SayaCloud\Exception\ApiClientException;
 use SayaCloud\Exception\ApiException;
 use SayaCloud\Lib\ApiSignatureTrait;
+use SayaCloud\Lib\ContentType;
 use SayaCloud\Lib\RequestMethod;
 
 /**
@@ -48,17 +49,38 @@ abstract class ClientAbstract implements ApiInterface
     public function request(ParameterInterface $requestData)
     {
         $apiParameters = $requestData->getApiParameters();
-        $headers = $requestData->createRequestHeaders($this->getAppKey(), $this->getAppSecret());
+        $headers = $requestData->createRequestHeaders($this->getAppKey(), $this->getAppSecret(),$requestData->getContentType());
         $requestMethod = $requestData->getRequestMethod();
         $apiUri = $requestData->getApiUri();
         $httpClient = new Client(['timeout' => 15, 'base_uri' => $this->getApiUrlBase()]);
         try {
             switch ($requestMethod) {
                 case RequestMethod::POST:
-                    $response = $httpClient->request(RequestMethod::POST, $apiUri, [
-                        'form_params' => $apiParameters,
-                        'headers' => $headers
-                    ]);
+                    $postType = $requestData->getContentType();
+                    switch ($postType) {
+                        case ContentType::URLENCODE:
+                            $response = $httpClient->request(RequestMethod::POST, $apiUri, [
+                                'form_params' => $apiParameters,
+                                'headers' => $headers
+                            ]);
+                            break;
+                        case ContentType::MULTIPART:
+                            unset($headers['Content-Type']);
+                            $multipart = $apiParameters['multipart'] ?? [];
+                            $response = $httpClient->request(RequestMethod::POST, $apiUri, [
+                                'multipart' => $multipart,
+                                'headers'=>$headers
+                            ]);
+                            break;
+                        case ContentType::BINARY:
+                            $response = $httpClient->request(RequestMethod::POST, $apiUri, [
+                                'body' => $apiParameters['raw'],
+                                'headers' => $headers
+                            ]);
+                            break;
+                        default:
+                            throw new ApiClientException('undefined post request type');
+                    }
                     break;
                 case RequestMethod::GET:
                     $response = $httpClient->request(RequestMethod::GET, $apiUri, [

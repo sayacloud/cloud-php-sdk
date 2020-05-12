@@ -5,6 +5,7 @@ namespace SayaCloud\Contract;
 use Ramsey\Uuid\Uuid;
 use ReflectionClass;
 use SayaCloud\Lib\ApiSignatureTrait;
+use SayaCloud\Lib\ContentType;
 use SayaCloud\Lib\RequestMethod;
 use Swoft\Stdlib\Helper\ObjectHelper;
 
@@ -37,13 +38,18 @@ abstract class RequestAbstract implements ParameterInterface
      */
     protected $random_key;
 
+    /**
+     * @var string
+     */
+    protected $contentType = ContentType::URLENCODE;
+
 
     public function __construct(array $arguments = [])
     {
         if (!empty($arguments)) {
             $reflectionClass = new ReflectionClass($this);
             foreach ($arguments as $property => $argument) {
-                if(property_exists($this,$property)){
+                if (property_exists($this, $property)) {
                     if ($type = ObjectHelper::getPropertyBaseType($reflectionClass->getProperty($property))) {
                         $argument = ObjectHelper::parseParamType($type, $argument);
                     }
@@ -65,7 +71,7 @@ abstract class RequestAbstract implements ParameterInterface
             $this->random_key = Uuid::uuid4()->toString();
         }
         $params = get_object_vars($this);
-        unset($params['apiUri'], $params['requestMethod']);
+        unset($params['apiUri'], $params['requestMethod'], $params['contentType']);
         return $params;
     }
 
@@ -73,6 +79,9 @@ abstract class RequestAbstract implements ParameterInterface
      * create http headers for api request
      * Get apiParameters and makeSignature
      *
+     * @param string $appKey
+     * @param string $appSecret
+     * @param string $contentType
      * @return array
      * eg. [
      *      'Content-Type'=>'application/x-www-form-urlencoded',
@@ -82,9 +91,9 @@ abstract class RequestAbstract implements ParameterInterface
      * ]
      * @throws \Exception
      */
-    public function createRequestHeaders(string $appKey, string $appSecret)
+    public function createRequestHeaders(string $appKey, string $appSecret, string $contentType = ContentType::URLENCODE)
     {
-        $headers['Content-Type'] = 'application/x-www-form-urlencoded';
+        $headers['Content-Type'] = $contentType;
         $headers['App-Key'] = $appKey;
 
         $apiParameters = $this->getApiParameters();
@@ -108,6 +117,22 @@ abstract class RequestAbstract implements ParameterInterface
     public function getRequestMethod()
     {
         return $this->requestMethod;
+    }
+
+    /**
+     * @param string $contentType
+     */
+    public function setContentType(string $contentType)
+    {
+        $this->contentType = $contentType;
+    }
+
+    /**
+     * @return string
+     */
+    public function getContentType(): string
+    {
+        return $this->contentType;
     }
 
 }

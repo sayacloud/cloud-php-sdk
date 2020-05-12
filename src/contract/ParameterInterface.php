@@ -31,6 +31,7 @@ interface ParameterInterface
      *
      * @param string $appKey
      * @param string $appSecret
+     * @param string|null $contentType
      * @return array
      * eg. [
      *      'Content-Type'=>'application/x-www-form-urlencoded',
@@ -38,7 +39,7 @@ interface ParameterInterface
      *      'Sign'=>'signatureStringHere',
      * ]
      */
-    public function createRequestHeaders(string $appKey, string $appSecret);
+    public function createRequestHeaders(string $appKey, string $appSecret,string $contentType = '');
 
     /**
      * Get Api Uri, eg. '/v1/items'
@@ -53,5 +54,12 @@ interface ParameterInterface
      * @return string
      */
     public function getRequestMethod();
+
+    /**
+     * Get Post request type
+     *
+     * @return mixed
+     */
+    public function getContentType();
 
 }
