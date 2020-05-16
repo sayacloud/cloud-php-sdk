@@ -15,5 +15,5 @@ $config = [
     'message_amqp_queue' => '',
     'message_api_base' => 'http://127.0.0.1:18300/api/message',
 
-    'api_base'=>'http://127.0.0.1:16880'
+    'api_base'=>'http://120.79.145.144:16880'
 ];
