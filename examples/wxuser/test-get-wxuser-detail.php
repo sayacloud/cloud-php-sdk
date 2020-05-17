@@ -1,6 +1,6 @@
 <?php
 
-use SayaCloud\Api\User\UserUpdate;
+use SayaCloud\Api\WxUser\UserWechatDetail;
 use SayaCloud\SayaCloud;
 
 include '../../vendor/autoload.php';
@@ -9,12 +9,8 @@ include '../config.php';
 try {
     $client = SayaCloud::client($config);
 
-    $update = [
-        'id'=>2,
-        'level_id'=>1,
-        'name'=>'更新的名字'
-    ];
-    $api = new UserUpdate($update);
+    $query = ['id' => 1];
+    $api = new UserWechatDetail($query);
 
     $result = $client->request($api);
     var_dump($result);

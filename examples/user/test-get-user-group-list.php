@@ -1,6 +1,6 @@
 <?php
 
-use SayaCloud\Api\User\UserUpdate;
+use SayaCloud\Api\User\UserGroupList;
 use SayaCloud\SayaCloud;
 
 include '../../vendor/autoload.php';
@@ -9,14 +9,10 @@ include '../config.php';
 try {
     $client = SayaCloud::client($config);
 
-    $update = [
-        'id'=>2,
-        'level_id'=>1,
-        'name'=>'更新的名字'
-    ];
-    $api = new UserUpdate($update);
+    $filter = ['limit'=>1000];
+    $list = new UserGroupList($filter);
 
-    $result = $client->request($api);
+    $result = $client->request($list);
     var_dump($result);
 
 } catch (Exception $e) {

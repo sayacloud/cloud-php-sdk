@@ -1,6 +1,6 @@
 <?php
 
-use SayaCloud\Api\User\UserUpdate;
+use SayaCloud\Api\Levels\RewardLevelUpdate;
 use SayaCloud\SayaCloud;
 
 include '../../vendor/autoload.php';
@@ -9,12 +9,14 @@ include '../config.php';
 try {
     $client = SayaCloud::client($config);
 
-    $update = [
-        'id'=>2,
-        'level_id'=>1,
-        'name'=>'更新的名字'
+    $data = [
+        'id' => 1,
+        'title' => '认证会员',
+        'discount' => 20,
+        'l0_points' => '10%',
+        'l0_points_name' => '会员积分奖励'
     ];
-    $api = new UserUpdate($update);
+    $api = new RewardLevelUpdate($data);
 
     $result = $client->request($api);
     var_dump($result);

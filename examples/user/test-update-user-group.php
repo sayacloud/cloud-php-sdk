@@ -1,6 +1,7 @@
 <?php
 
-use SayaCloud\Api\User\UserUpdate;
+use SayaCloud\Api\User\UserGroupDetail;
+use SayaCloud\Api\User\UserGroupUpdate;
 use SayaCloud\SayaCloud;
 
 include '../../vendor/autoload.php';
@@ -9,12 +10,11 @@ include '../config.php';
 try {
     $client = SayaCloud::client($config);
 
-    $update = [
-        'id'=>2,
-        'level_id'=>1,
-        'name'=>'更新的名字'
+    $data = [
+        'id'=>10,
+        'name'=>'修改名称'
     ];
-    $api = new UserUpdate($update);
+    $api = new UserGroupUpdate($data);
 
     $result = $client->request($api);
     var_dump($result);

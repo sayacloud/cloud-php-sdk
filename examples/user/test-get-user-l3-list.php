@@ -1,6 +1,8 @@
 <?php
 
-use SayaCloud\Api\User\UserUpdate;
+use SayaCloud\Api\User\UserSubL1List;
+use SayaCloud\Api\User\UserSubL2List;
+use SayaCloud\Api\User\UserSubL3List;
 use SayaCloud\SayaCloud;
 
 include '../../vendor/autoload.php';
@@ -9,12 +11,12 @@ include '../config.php';
 try {
     $client = SayaCloud::client($config);
 
-    $update = [
-        'id'=>2,
-        'level_id'=>1,
-        'name'=>'更新的名字'
+    $filter = [
+        'l3_uid' => 2,
+        'page' => 1,
+        'limit' => 20
     ];
-    $api = new UserUpdate($update);
+    $api = new UserSubL3List($filter);
 
     $result = $client->request($api);
     var_dump($result);
