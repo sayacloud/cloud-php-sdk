@@ -11,6 +11,7 @@ try {
     $client = SayaCloud::client($config);
 
     $detail = new ShopDetail(['id'=>1]);
+    $detail->setIncludeAccount(1);
 
     $result = $client->request($detail);
     var_dump($result);

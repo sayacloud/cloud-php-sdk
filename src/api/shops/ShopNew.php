@@ -96,6 +96,16 @@ class ShopNew extends RequestAbstract
     protected $rank;
 
     /**
+     * @var string
+     */
+    protected $state;
+
+    /**
+     * @var string
+     */
+    protected $images;
+
+    /**
      * @param int $project_id
      */
     public function setProjectId(int $project_id)
@@ -221,6 +231,22 @@ class ShopNew extends RequestAbstract
     public function setRank(int $rank)
     {
         $this->rank = $rank;
+    }
+
+    /**
+     * @param string $state
+     */
+    public function setState(string $state): void
+    {
+        $this->state = $state;
+    }
+
+    /**
+     * @param string $images
+     */
+    public function setImages(string $images): void
+    {
+        $this->images = $images;
     }
 
 

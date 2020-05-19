@@ -102,6 +102,16 @@ class ShopUpdate extends RequestAbstract
     protected $rank;
 
     /**
+     * @var string
+     */
+    protected $state;
+
+    /**
+     * @var string
+     */
+    protected $images;
+
+    /**
      * @param string $type
      */
     public function setType(string $type)
@@ -237,5 +247,20 @@ class ShopUpdate extends RequestAbstract
         $this->admin_id = $admin_id;
     }
 
+    /**
+     * @param string $state
+     */
+    public function setState(string $state): void
+    {
+        $this->state = $state;
+    }
+
+    /**
+     * @param string $images
+     */
+    public function setImages(string $images): void
+    {
+        $this->images = $images;
+    }
 
 }
