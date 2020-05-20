@@ -27,9 +27,10 @@ class ItemUpdate extends RequestAbstract
     protected $icon;
 
     /**
-     * @var array
+     * 多个地址，逗号拼接
+     * @var string
      */
-    protected $images = [];
+    protected $images = '';
 
     /**
      * @var string
@@ -99,9 +100,9 @@ class ItemUpdate extends RequestAbstract
     }
 
     /**
-     * @param array $images
+     * @param string $images
      */
-    public function setImages(array $images)
+    public function setImages(string $images)
     {
         $this->images = $images;
     }

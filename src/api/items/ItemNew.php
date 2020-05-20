@@ -42,9 +42,9 @@ class ItemNew extends RequestAbstract
     protected $icon;
 
     /**
-     * @var array
+     * @var string
      */
-    protected $images = [];
+    protected $images;
 
     /**
      * @var string
@@ -138,9 +138,9 @@ class ItemNew extends RequestAbstract
     }
 
     /**
-     * @param array $images
+     * @param string $images
      */
-    public function setImages(array $images)
+    public function setImages(string $images)
     {
         $this->images = $images;
     }
