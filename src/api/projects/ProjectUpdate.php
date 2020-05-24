@@ -33,6 +33,11 @@ class ProjectUpdate extends RequestAbstract
     protected $status;
 
     /**
+     * @var string
+     */
+    protected $wechat_appid;
+
+    /**
      * @param string $project_name
      */
     public function setProjectName(string $project_name)
@@ -62,6 +67,14 @@ class ProjectUpdate extends RequestAbstract
     public function setId(int $id)
     {
         $this->id = $id;
+    }
+
+    /**
+     * @param string $wechat_appid
+     */
+    public function setWechatAppid(string $wechat_appid): void
+    {
+        $this->wechat_appid = $wechat_appid;
     }
 
 }

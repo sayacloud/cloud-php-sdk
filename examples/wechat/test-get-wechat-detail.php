@@ -1,6 +1,5 @@
 <?php
 
-use SayaCloud\Api\Wechat\WechatDelete;
 use SayaCloud\Api\Wechat\WechatDetail;
 use SayaCloud\SayaCloud;
 
