@@ -5,7 +5,7 @@ namespace SayaCloud\Api\Article;
 use SayaCloud\Contract\RequestAbstract;
 use SayaCloud\Lib\RequestMethod;
 
-class ArticleCategoryNew extends RequestAbstract
+class ArticleNew extends RequestAbstract
 {
     protected $apiUri = '/article/create';
 
@@ -19,7 +19,7 @@ class ArticleCategoryNew extends RequestAbstract
     /**
      * @var string
      */
-    protected $type = 'category';
+    protected $type = 'article';
 
     /**
      * @var string
@@ -37,6 +37,26 @@ class ArticleCategoryNew extends RequestAbstract
     protected $description;
 
     /**
+     * @var string
+     */
+    protected $content;
+
+    /**
+     * @var string
+     */
+    protected $author;
+
+    /**
+     * @var string
+     */
+    protected $origin_link;
+
+    /**
+     * @var int
+     */
+    protected $parent_id;
+
+    /**
      * @var int
      */
     protected $rank;
@@ -46,6 +66,38 @@ class ArticleCategoryNew extends RequestAbstract
      * @var string
      */
     protected $status;
+
+    /**
+     * @param string $content
+     */
+    public function setContent(string $content): void
+    {
+        $this->content = $content;
+    }
+
+    /**
+     * @param string $author
+     */
+    public function setAuthor(string $author): void
+    {
+        $this->author = $author;
+    }
+
+    /**
+     * @param string $origin_link
+     */
+    public function setOriginLink(string $origin_link): void
+    {
+        $this->origin_link = $origin_link;
+    }
+
+    /**
+     * @param int $parent_id
+     */
+    public function setParentId(int $parent_id): void
+    {
+        $this->parent_id = $parent_id;
+    }
 
     /**
      * @param int $project_id

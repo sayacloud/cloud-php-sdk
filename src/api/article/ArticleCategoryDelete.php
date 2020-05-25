@@ -5,11 +5,11 @@ namespace SayaCloud\Api\Article;
 use SayaCloud\Contract\RequestAbstract;
 use SayaCloud\Lib\RequestMethod;
 
-class ArticleCategoryDetail extends RequestAbstract
+class ArticleCategoryDelete extends RequestAbstract
 {
-    protected $apiUri = '/article/detail';
+    protected $apiUri = '/article/delete';
 
-    protected $requestMethod = RequestMethod::GET;
+    protected $requestMethod = RequestMethod::POST;
 
     /**
      * @var int

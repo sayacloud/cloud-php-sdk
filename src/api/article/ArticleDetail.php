@@ -5,7 +5,7 @@ namespace SayaCloud\Api\Article;
 use SayaCloud\Contract\RequestAbstract;
 use SayaCloud\Lib\RequestMethod;
 
-class ArticleCategoryDetail extends RequestAbstract
+class ArticleDetail extends RequestAbstract
 {
     protected $apiUri = '/article/detail';
 

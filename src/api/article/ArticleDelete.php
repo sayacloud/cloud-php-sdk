@@ -5,7 +5,7 @@ namespace SayaCloud\Api\Article;
 use SayaCloud\Contract\RequestAbstract;
 use SayaCloud\Lib\RequestMethod;
 
-class ArticleCategoryDelete extends RequestAbstract
+class ArticleDelete extends RequestAbstract
 {
     protected $apiUri = '/article/delete';
 

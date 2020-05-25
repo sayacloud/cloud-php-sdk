@@ -1,6 +1,7 @@
 <?php
 
 use SayaCloud\Api\Article\ArticleCategoryList;
+use SayaCloud\Api\Article\ArticleList;
 use SayaCloud\SayaCloud;
 
 include '../../vendor/autoload.php';
@@ -12,7 +13,7 @@ try {
     $data = [
         'project_id' => 1,
     ];
-    $api = new ArticleCategoryList($data);
+    $api = new ArticleList($data);
 
     $result = $client->request($api);
     var_dump($result);

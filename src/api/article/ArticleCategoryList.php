@@ -5,7 +5,7 @@ namespace SayaCloud\Api\Article;
 use SayaCloud\Contract\RequestAbstract;
 use SayaCloud\Lib\RequestMethod;
 
-class CategoryList extends RequestAbstract
+class ArticleCategoryList extends RequestAbstract
 {
     protected $apiUri = '/article/list';
 
@@ -35,4 +35,20 @@ class CategoryList extends RequestAbstract
      * @var int
      */
     protected $limit = 1000;
+
+    /**
+     * @param int $project_id
+     */
+    public function setProjectId(int $project_id): void
+    {
+        $this->project_id = $project_id;
+    }
+
+    /**
+     * @param string $status
+     */
+    public function setStatus(string $status): void
+    {
+        $this->status = $status;
+    }
 }

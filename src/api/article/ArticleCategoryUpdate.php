@@ -5,16 +5,16 @@ namespace SayaCloud\Api\Article;
 use SayaCloud\Contract\RequestAbstract;
 use SayaCloud\Lib\RequestMethod;
 
-class ArticleCategoryNew extends RequestAbstract
+class ArticleCategoryUpdate extends RequestAbstract
 {
-    protected $apiUri = '/article/create';
+    protected $apiUri = '/article/update';
 
     protected $requestMethod = RequestMethod::POST;
 
     /**
      * @var int
      */
-    protected $project_id;
+    protected $id;
 
     /**
      * @var string
@@ -46,14 +46,6 @@ class ArticleCategoryNew extends RequestAbstract
      * @var string
      */
     protected $status;
-
-    /**
-     * @param int $project_id
-     */
-    public function setProjectId(int $project_id): void
-    {
-        $this->project_id = $project_id;
-    }
 
     /**
      * @param string $title
@@ -93,6 +85,14 @@ class ArticleCategoryNew extends RequestAbstract
     public function setStatus(string $status): void
     {
         $this->status = $status;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId(int $id): void
+    {
+        $this->id = $id;
     }
 
 }

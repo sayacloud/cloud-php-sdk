@@ -5,11 +5,16 @@ namespace SayaCloud\Api\Article;
 use SayaCloud\Contract\RequestAbstract;
 use SayaCloud\Lib\RequestMethod;
 
-class ArticleNew extends RequestAbstract
+class ArticleUpdate extends RequestAbstract
 {
-    protected $apiUri = '/article/create';
+    protected $apiUri = '/article/update';
 
     protected $requestMethod = RequestMethod::POST;
+
+    /**
+     * @var int
+     */
+    protected $id;
 
     /**
      * @var int
@@ -145,6 +150,14 @@ class ArticleNew extends RequestAbstract
     public function setStatus(string $status): void
     {
         $this->status = $status;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId(int $id): void
+    {
+        $this->id = $id;
     }
 
 }
