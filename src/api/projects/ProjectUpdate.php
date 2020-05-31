@@ -38,6 +38,59 @@ class ProjectUpdate extends RequestAbstract
     protected $wechat_appid;
 
     /**
+     * 封面图，LOGO
+     * @var string
+     */
+    protected $cover;
+
+    /**
+     * @var int
+     */
+    protected $default_user_group;
+
+    /**
+     * @var int
+     */
+    protected $default_level_id;
+
+    /**
+     * @var int
+     */
+    protected $default_referrer_uid;
+
+    /**
+     * @param string $cover
+     */
+    public function setCover(string $cover): void
+    {
+        $this->cover = $cover;
+    }
+
+    /**
+     * @param int $default_user_group
+     */
+    public function setDefaultUserGroup(int $default_user_group): void
+    {
+        $this->default_user_group = $default_user_group;
+    }
+
+    /**
+     * @param int $default_level_id
+     */
+    public function setDefaultLevelId(int $default_level_id): void
+    {
+        $this->default_level_id = $default_level_id;
+    }
+
+    /**
+     * @param int $default_referrer_uid
+     */
+    public function setDefaultReferrerUid(int $default_referrer_uid): void
+    {
+        $this->default_referrer_uid = $default_referrer_uid;
+    }
+
+    /**
      * @param string $project_name
      */
     public function setProjectName(string $project_name)
