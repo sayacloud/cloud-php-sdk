@@ -59,6 +59,45 @@ class ProjectUpdate extends RequestAbstract
     protected $default_referrer_uid;
 
     /**
+     * @var int
+     */
+    protected $article1_id;
+
+    /**
+     * @var int
+     */
+    protected $article2_id;
+
+    /**
+     * @var int
+     */
+    protected $article3_id;
+
+    /**
+     * @param int $article1_id
+     */
+    public function setArticle1Id(int $article1_id): void
+    {
+        $this->article1_id = $article1_id;
+    }
+
+    /**
+     * @param int $article2_id
+     */
+    public function setArticle2Id(int $article2_id): void
+    {
+        $this->article2_id = $article2_id;
+    }
+
+    /**
+     * @param int $article3_id
+     */
+    public function setArticle3Id(int $article3_id): void
+    {
+        $this->article3_id = $article3_id;
+    }
+
+    /**
      * @param string $cover
      */
     public function setCover(string $cover): void
