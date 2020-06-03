@@ -52,6 +52,11 @@ class ItemSkuNew extends RequestAbstract
     protected $virtual_sold;
 
     /**
+     * @var int
+     */
+    protected $packaged_quantity;
+
+    /**
      * @param int $item_id
      */
     public function setItemId(int $item_id)
@@ -105,5 +110,13 @@ class ItemSkuNew extends RequestAbstract
     public function setUnitPrice(float $unit_price)
     {
         $this->unit_price = $unit_price;
+    }
+
+    /**
+     * @param int $packaged_quantity
+     */
+    public function setPackagedQuantity(int $packaged_quantity): void
+    {
+        $this->packaged_quantity = $packaged_quantity;
     }
 }

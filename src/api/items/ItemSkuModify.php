@@ -57,6 +57,11 @@ class ItemSkuModify extends RequestAbstract
     protected $virtual_sold;
 
     /**
+     * @var int
+     */
+    protected $packaged_quantity;
+
+    /**
      * @param int $id
      */
     public function setId(int $id)
@@ -118,5 +123,13 @@ class ItemSkuModify extends RequestAbstract
     public function setCostPrice(float $cost_price)
     {
         $this->cost_price = $cost_price;
+    }
+
+    /**
+     * @param int $packaged_quantity
+     */
+    public function setPackagedQuantity(int $packaged_quantity): void
+    {
+        $this->packaged_quantity = $packaged_quantity;
     }
 }
