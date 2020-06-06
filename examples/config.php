@@ -2,7 +2,7 @@
 
 $config = [
     'app_key' => 'atO0R6aaITl3',
-    'app_secret' => 'Bag25Nas4abPdzwa',
+    'app_secret' => 'IaKqrKJ0yaa1Faxx',
 
     'message_sender' => 2,
     'message_sequence' => 2,
@@ -13,7 +13,7 @@ $config = [
     'message_amqp_exchange' => '',
     'message_amqp_route' => '',
     'message_amqp_queue' => '',
-    'message_api_base' => 'http://127.0.0.1:18300/api/message',
+    'message_api_base' => 'http://ms-api.saya.cloud/api/message',
 
     'api_base'=>'http://120.79.145.144:16880'
 ];
