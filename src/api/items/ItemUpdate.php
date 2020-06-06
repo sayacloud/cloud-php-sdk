@@ -76,6 +76,18 @@ class ItemUpdate extends RequestAbstract
     protected $item_deal_type;
 
     /**
+     * 如果是发核销码，设置核核码生效时间
+     * @var string
+     */
+    protected $code_active_time;
+
+    /**
+     * 如果是发核销码，设置核核码失效时间
+     * @var string
+     */
+    protected $code_expire_time;
+
+    /**
      * @param int $id
      */
     public function setId(int $id)
@@ -169,5 +181,21 @@ class ItemUpdate extends RequestAbstract
     public function setItemDealType(string $item_deal_type)
     {
         $this->item_deal_type = $item_deal_type;
+    }
+
+    /**
+     * @param string $code_active_time
+     */
+    public function setCodeActiveTime(string $code_active_time): void
+    {
+        $this->code_active_time = $code_active_time;
+    }
+
+    /**
+     * @param string $code_expire_time
+     */
+    public function setCodeExpireTime(string $code_expire_time): void
+    {
+        $this->code_expire_time = $code_expire_time;
     }
 }
