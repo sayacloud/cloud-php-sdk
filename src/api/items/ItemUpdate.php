@@ -88,6 +88,12 @@ class ItemUpdate extends RequestAbstract
     protected $code_expire_time;
 
     /**
+     * 下单必填字段
+     * @var string
+     */
+    protected $require_field;
+
+    /**
      * @param int $id
      */
     public function setId(int $id)
@@ -197,5 +203,13 @@ class ItemUpdate extends RequestAbstract
     public function setCodeExpireTime(string $code_expire_time): void
     {
         $this->code_expire_time = $code_expire_time;
+    }
+
+    /**
+     * @param string $require_field
+     */
+    public function setRequireField(string $require_field): void
+    {
+        $this->require_field = $require_field;
     }
 }
