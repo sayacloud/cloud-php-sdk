@@ -9,7 +9,7 @@ include '../config.php';
 try {
     $client = SayaCloud::client($config);
 
-    $list = new ItemList([]);
+    $list = new ItemList(['sort'=>'sold']);
 
     $result = $client->request($list);
     print_r($result);
