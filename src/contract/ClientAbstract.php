@@ -95,7 +95,7 @@ abstract class ClientAbstract implements ApiInterface
             if ($this->apiStatusCode !== 200) {
                 throw new ApiException('Invalid http response status');
             }
-            $this->apiResponseBody = $response->getBody()->getContents();var_dump($this->apiResponseBody);
+            $this->apiResponseBody = $response->getBody()->getContents();
             $this->apiResponseHeaders = $response->getHeaders();
             return $this->parseResponse();
         } catch (ApiClientException $e) {
