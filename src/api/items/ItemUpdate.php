@@ -94,6 +94,12 @@ class ItemUpdate extends RequestAbstract
     protected $require_field;
 
     /**
+     * 适用门店，服务码可用的门店，多个ID用英文逗号分隔
+     * @var string
+     */
+    protected $bind_shops;
+
+    /**
      * @param int $id
      */
     public function setId(int $id)
@@ -211,5 +217,13 @@ class ItemUpdate extends RequestAbstract
     public function setRequireField(string $require_field): void
     {
         $this->require_field = $require_field;
+    }
+
+    /**
+     * @param string $bind_shops
+     */
+    public function setBindShops(string $bind_shops): void
+    {
+        $this->bind_shops = $bind_shops;
     }
 }
