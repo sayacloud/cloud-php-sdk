@@ -1,6 +1,6 @@
 <?php
 
-use SayaCloud\Api\Refund\RefundApply;
+use SayaCloud\Api\Orders\OrderDeliveryCancel;
 use SayaCloud\SayaCloud;
 
 include '../../vendor/autoload.php';
@@ -9,13 +9,11 @@ include '../config.php';
 try {
     $client = SayaCloud::client($config);
 
-    $data = [
-        'order_id' => 16,
-        'refund_reason' => '测试',
-        'refund_amount' => 0.1,
+    $filter = [
+        'order_id' => 17,
         'handler' => 'QD Seven'
     ];
-    $api = new RefundApply($data);
+    $api = new OrderDeliveryCancel($filter);
 
     $result = $client->request($api);
     var_dump($result);
