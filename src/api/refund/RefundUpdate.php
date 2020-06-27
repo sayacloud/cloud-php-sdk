@@ -23,11 +23,6 @@ class RefundUpdate extends RequestAbstract
     protected $refund_amount;
 
     /**
-     * @var string
-     */
-    protected $handler;
-
-    /**
      * @param int $id
      */
     public function setId(int $id): void
@@ -41,13 +36,5 @@ class RefundUpdate extends RequestAbstract
     public function setRefundAmount(string $refund_amount): void
     {
         $this->refund_amount = $refund_amount;
-    }
-
-    /**
-     * @param string $handler
-     */
-    public function setHandler(string $handler): void
-    {
-        $this->handler = $handler;
     }
 }

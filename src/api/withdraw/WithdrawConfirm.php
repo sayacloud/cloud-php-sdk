@@ -27,11 +27,6 @@ class WithdrawConfirm extends RequestAbstract
     protected $pay_method;
 
     /**
-     * @var string
-     */
-    protected $handler;
-
-    /**
      * @param int $id
      */
     public function setId(int $id): void
@@ -53,14 +48,6 @@ class WithdrawConfirm extends RequestAbstract
     public function setPayMethod(string $pay_method): void
     {
         $this->pay_method = $pay_method;
-    }
-
-    /**
-     * @param string $handler
-     */
-    public function setHandler(string $handler): void
-    {
-        $this->handler = $handler;
     }
 
 

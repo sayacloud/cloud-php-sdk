@@ -22,11 +22,6 @@ class WithdrawRefuse extends RequestAbstract
     protected $refuse_reason;
 
     /**
-     * @var string
-     */
-    protected $handler;
-
-    /**
      * @param int $id
      */
     public function setId(int $id): void
@@ -40,14 +35,6 @@ class WithdrawRefuse extends RequestAbstract
     public function setRefuseReason(string $refuse_reason): void
     {
         $this->refuse_reason = $refuse_reason;
-    }
-
-    /**
-     * @param string $handler
-     */
-    public function setHandler(string $handler): void
-    {
-        $this->handler = $handler;
     }
 
 

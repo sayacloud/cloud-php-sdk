@@ -22,11 +22,6 @@ class WithdrawModify extends RequestAbstract
     protected $handling_fee;
 
     /**
-     * @var string
-     */
-    protected $handler;
-
-    /**
      * @param int $id
      */
     public function setId(int $id): void
@@ -42,11 +37,4 @@ class WithdrawModify extends RequestAbstract
         $this->handling_fee = $handling_fee;
     }
 
-    /**
-     * @param string $handler
-     */
-    public function setHandler(string $handler): void
-    {
-        $this->handler = $handler;
-    }
 }

@@ -39,6 +39,11 @@ abstract class RequestAbstract implements ParameterInterface
     protected $random_key;
 
     /**
+     * @var int
+     */
+    protected $handler;
+
+    /**
      * @var string
      */
     protected $contentType = ContentType::URLENCODE;
@@ -133,6 +138,22 @@ abstract class RequestAbstract implements ParameterInterface
     public function getContentType(): string
     {
         return $this->contentType;
+    }
+
+    /**
+     * @return int
+     */
+    public function getHandler(): int
+    {
+        return $this->handler;
+    }
+
+    /**
+     * @param int $handler
+     */
+    public function setHandler(int $handler): void
+    {
+        $this->handler = $handler;
     }
 
 }

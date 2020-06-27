@@ -42,11 +42,6 @@ class ServiceCodeManualIssue extends RequestAbstract
     protected $expire_time;
 
     /**
-     * @var string
-     */
-    protected $handler;
-
-    /**
      * @param int $issue_quantity
      */
     public function setIssueQuantity(int $issue_quantity): void
@@ -84,14 +79,6 @@ class ServiceCodeManualIssue extends RequestAbstract
     public function setExpireTime(string $expire_time): void
     {
         $this->expire_time = $expire_time;
-    }
-
-    /**
-     * @param string $handler
-     */
-    public function setHandler(string $handler): void
-    {
-        $this->handler = $handler;
     }
 
 }

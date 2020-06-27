@@ -27,11 +27,6 @@ class ServiceCodeModify extends RequestAbstract
     protected $expire_time;
 
     /**
-     * @var string
-     */
-    protected $handler;
-
-    /**
      * @param int $id
      */
     public function setId(int $id): void
@@ -53,14 +48,6 @@ class ServiceCodeModify extends RequestAbstract
     public function setExpireTime(string $expire_time): void
     {
         $this->expire_time = $expire_time;
-    }
-
-    /**
-     * @param string $handler
-     */
-    public function setHandler(string $handler): void
-    {
-        $this->handler = $handler;
     }
 
 }

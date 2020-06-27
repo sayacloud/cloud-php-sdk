@@ -60,11 +60,6 @@ class WithdrawNew extends RequestAbstract
     protected $receiving_holder_name;
 
     /**
-     * @var string
-     */
-    protected $handler;
-
-    /**
      * @param string $account_type
      */
     public function setAccountType(string $account_type): void
@@ -126,14 +121,6 @@ class WithdrawNew extends RequestAbstract
     public function setReceivingHolderName(string $receiving_holder_name): void
     {
         $this->receiving_holder_name = $receiving_holder_name;
-    }
-
-    /**
-     * @param string $handler
-     */
-    public function setHandler(string $handler): void
-    {
-        $this->handler = $handler;
     }
 
 

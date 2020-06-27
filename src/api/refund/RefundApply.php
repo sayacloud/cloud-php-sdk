@@ -27,11 +27,6 @@ class RefundApply extends RequestAbstract
     protected $refund_reason;
 
     /**
-     * @var
-     */
-    protected $handler;
-
-    /**
      * @param int $order_id
      */
     public function setOrderId(int $order_id): void
@@ -53,14 +48,6 @@ class RefundApply extends RequestAbstract
     public function setRefundReason(string $refund_reason): void
     {
         $this->refund_reason = $refund_reason;
-    }
-
-    /**
-     * @param mixed $handler
-     */
-    public function setHandler($handler): void
-    {
-        $this->handler = $handler;
     }
 
 }

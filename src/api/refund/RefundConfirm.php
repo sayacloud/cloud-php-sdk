@@ -18,11 +18,6 @@ class RefundConfirm extends RequestAbstract
     protected $id;
 
     /**
-     * @var string
-     */
-    protected $handler;
-
-    /**
      * @param int $id
      */
     public function setId(int $id): void
